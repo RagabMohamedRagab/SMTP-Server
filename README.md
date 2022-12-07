@@ -11,17 +11,17 @@
 
 # Install the MailKit Nuget Package
 
-```
+```bash
 Install-Package NETCore.MailKit
 ```
 You need to include the following namespaces in your code for the correct configuration.
-```
+```bash
 using MailKit.Net.Smtp;
 
 using MailKit.Security;
 ```
 # Add the Folder Model
-```
+```bash
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -42,7 +42,7 @@ namespace _101SendEmailNotificationDoNetCoreWebAPI.Model
 # Not Add the Folder Services
  After the creation of the folder now add the following classes.
  ## IMailService
- ```
+ ```bash
  using _101SendEmailNotificationDoNetCoreWeb.Model;
 using System.Threading.Tasks;
 namespace _101SendEmailNotificationDoNetCoreWeb.Services
@@ -55,7 +55,7 @@ namespace _101SendEmailNotificationDoNetCoreWeb.Services
 }
  ```
  ## MailService
- ```
+ ```bash
  using MimeKit;
 using System.IO;
 using System.Threading.Tasks;
@@ -109,7 +109,7 @@ namespace _101SendEmailNotificationDoNetCoreWeb.Services
  ```
  
  # Add the Folder Settings
- ```
+ ```bash
  namespace _101SendEmailNotificationDoNetCoreWeb.Settings
 {
     public class MailSettings
@@ -124,7 +124,7 @@ namespace _101SendEmailNotificationDoNetCoreWeb.Services
  ```
  
  # Add the Controller in the project
- ```
+ ```bash
  using _101SendEmailNotificationDoNetCoreWeb.Model;
 using _101SendEmailNotificationDoNetCoreWeb.Services;
 using Microsoft.AspNetCore.Mvc;
