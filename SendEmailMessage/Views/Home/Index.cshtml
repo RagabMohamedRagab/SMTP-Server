@@ -1,0 +1,56 @@
+﻿@model FromToVM;
+@{
+    ViewData["Title"]="Send Message By Email";
+}
+<div class="mt-4" style="text-align:center">
+    <h4 class="text-success" style="font-family:'Times New Roman', Times, serif">@ViewData["Title"]</h4>
+    <hr />
+</div>
+<section class="mt-3">
+    <form method="post" asp-controller="Home" asp-action="Index" asp-antiforgery="true" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger" style="font-size:12px"></div>
+        <div class="row">
+            
+            <div class="col-md-12">
+                <div class="from-group">
+                    <label asp-for="To" class="form-label"></label>
+                    <input asp-for="To" class="form-control" placeholder="example@gmail.com" />
+                    <span asp-validation-for="To" class="text-danger"  style="font-size:12px"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="from-group">
+                    <label asp-for="Subject" class="form-label"></label>
+                    <input asp-for="Subject" class="form-control" placeholder="Subject" />
+                    <span asp-validation-for="Subject" class="text-danger" style="font-size:12px"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="from-group">
+                    <label class="form-label">File</label>
+                    <input asp-for="Attachments" type="file" class="form-control" placeholder="To_Email" />
+                    <span asp-validation-for="Attachments" class="text-danger" style="font-size:12px"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">
+                <div class="from-group">
+                    <label asp-for="Body" class="form-label"></label>
+                    <textarea asp-for="Body" cols="12" rows="5" class="form-control" placeholder="Body"></textarea>
+                    <span asp-validation-for="Body" class="text-danger" style="font-size:12px"></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="from-group mt-4">
+            <input type="submit" class="btn btn-success" value="Send" />
+        </div>
+    </form>
+</section>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
